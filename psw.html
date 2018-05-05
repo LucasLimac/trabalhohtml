@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Exercícios de PSW</title>
+        
+        <script>
+            function loadDoc() {
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("botao").innerHTML = this.responseText;
+                }
+              };
+              xhttp.open("GET", "ajax_info.txt", true);
+              xhttp.send();
+            }
+            
+            function clicou(){
+                
+                if(document.getElementById("demo").innerHTML == "Reprovado"){
+                    document.getElementById("demo").innerHTML = "Aprovado";
+                    
+                    document.getElementById("demo").style.backgroundColor = "#66CDAA";
+                }
+              else{
+                  document.getElementById("demo").innerHTML = "Reprovado";
+                  
+                  document.getElementById("demo").style.backgroundColor = "red";
+              }  
+                
+            }
+        
+        
+        </script>
+        
+        
+        
+        
+        <style>
+            table{
+                background-color: #66CDAA;
+                padding: 10px;
+                text-align: left;
+                width: 100%;
+                height: auto;
+                border-color: black;
+               
+                
+                border-collapse: collapse;
+                border: 1px solid black;
+                font-family: Verdana 14;
+                border: 1px solid black;
+                
+            }
+            button{
+                
+                text-decoration: none;
+                border: 1px solid black;
+                border-radius: 4px;
+                margin-top: 30px;
+                margin-left: 250px;
+                font-family: monospace;
+                font-size: 15px;
+                
+            }
+            form{
+                margin-top: 50px;
+                padding: 20px;
+                background-color: #C0C0C0;
+                font-family: cursive; 
+                margin-bottom: 100px;
+                
+                
+                
+                
+            }
+            input[type='text']{
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 100%;
+                padding: 5px 10px;
+                box-sizing: border-box;
+                border: 1px solid black;
+                border-radius: 4px;
+            }
+            
+            input[type='submit']{
+                margin-top: 20px;
+                margin-left: 450px;
+                border: 1px solid black;
+                border-radius: 4px;
+                padding: 3px;
+                font-family: monospace;
+                
+            }
+            input[type='reset']{
+                margin-top: 20px;
+                padding: 3px;
+                border: 1px solid black;
+                border-radius: 4px;
+                font-family: monospace;
+                
+            }
+            legend{
+                font-size: 30px;
+                font-family: monospace;  
+                margin-left: 170px;
+                
+            }
+            
+        
+        </style>
+        
+    </head>
+    
+    <body>
+        <header>
+            <table border='1'>
+                
+                <tr>
+                    <td>Aluno</td>
+                    <td>Nota 1</td>
+                    <td>Nota 2</td>
+                    <td>Nota Final</td>
+                    <td>Prova Final</td>
+                    <td>Situação</td>
+                </tr>
+                
+                <tr>
+                    <td>João</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>9,5</td>
+                    <td>10</td>
+                    <td id="demo">Aprovado  </td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>Maria</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>8,5</td>
+                    <td>10</td>
+                    <td>Aprovado</td>
+                </tr>
+                
+                <tr>
+                    <td>José</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>6,5</td>
+                    <td>10</td>
+                    <td>Aprovado</td>
+                </tr>
+            
+            </table>
+            
+            <button type="button" onclick="clicou()">Modificar</button>
+                
+            
+        
+        </header>
+        
+        <div>
+            <form action="loadDoc()">
+                <fieldset>
+                    <legend>Portal do Aluno</legend>
+                    
+                Aluno:<br>
+                
+                  <input type="text" name="aluno"><br>
+                
+                  Nota 1:<br>
+                
+                  <input type="text" name="nota1" ><br>
+                
+                Nota 2:<br>
+                
+                  <input type="text" name="nota2" ><br>
+                
+                Nota Final:<br>
+                
+                  <input type="text" name="notafinal" ><br>
+                
+                Prova Final:<br>
+                
+                  <input type="text" name="provafinal"  ><br>
+                
+                
+                <input type="submit" id="botao" onclick="loadDoc()" value="Enviar">
+                    <input type="reset" value="Limpar">
+                    
+                 </fieldset>   
+                
+            
+            
+            </form>
+        
+        
+        </div>
+        
+        
+        
+    </body>
+    
+</html>
